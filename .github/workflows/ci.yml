@@ -23,8 +23,8 @@ jobs:
         with:
           node-version: 18
 
-      - name: Instalar dependencias
-        run: npm install
+      - name: Limpiar cache y reinstalar dependencias
+        run: rm -rf node_modules package-lock.json && npm install
 
       - name: Ejecutar pruebas
         run: npm test
